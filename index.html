@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arctic Construction | Luxury Home Renovation & Construction</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-inner">
+
+    <!-- 3D CUBE -->
+    <div class="cube-wrap">
+      <div class="cube">
+        <div class="face front"></div>
+        <div class="face back"></div>
+        <div class="face left"></div>
+        <div class="face right"></div>
+        <div class="face top"></div>
+        <div class="face bottom"></div>
+      </div>
+    </div>
+
+    <!-- BUILDING FLOORS RISING -->
+    <div class="floors" id="floors">
+      <div class="floor"></div>
+      <div class="floor"></div>
+      <div class="floor"></div>
+      <div class="floor"></div>
+      <div class="floor"></div>
+    </div>
+
+    <!-- BRAND NAME -->
+    <div class="preloader-brand">
+      <span class="brand-letter" style="--i:0">A</span>
+      <span class="brand-letter" style="--i:1">R</span>
+      <span class="brand-letter" style="--i:2">C</span>
+      <span class="brand-letter" style="--i:3">T</span>
+      <span class="brand-letter" style="--i:4">I</span>
+      <span class="brand-letter" style="--i:5">C</span>
+    </div>
+    <div class="preloader-sub">Construction</div>
+
+    <!-- PROGRESS BAR -->
+    <div class="preloader-bar-track">
+      <div class="preloader-bar" id="preloaderBar"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="logo">
+    <svg class="logo-icon" width="32" height="36" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="4" y="44" width="40" height="3" rx="1.5" fill="#C89B3C"/>
+      <rect x="6" y="30" width="10" height="14" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.5"/>
+      <line x1="11" y1="30" x2="11" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+      <rect x="7.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="11.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="7.5" y="38" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="11.5" y="38" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="19" y="6" width="10" height="38" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.8"/>
+      <line x1="24" y1="6" x2="24" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+      <line x1="19" y1="20" x2="29" y2="20" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+      <line x1="19" y1="30" x2="29" y2="30" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+      <rect x="20.5" y="10" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="24.5" y="10" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="20.5" y="15" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="24.5" y="15" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="20.5" y="23" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="24.5" y="23" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="20.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <rect x="24.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+      <line x1="24" y1="6" x2="24" y2="1" stroke="#C89B3C" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="24" cy="1" r="1.2" fill="#C89B3C"/>
+      <rect x="32" y="18" width="10" height="26" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.5"/>
+      <line x1="37" y1="18" x2="37" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+      <rect x="33.5" y="22" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="37.5" y="22" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="33.5" y="28" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="37.5" y="28" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="33.5" y="35" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+      <rect x="37.5" y="35" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+    </svg>
+    <div class="logo-divider"></div>
+    <div class="logo-text-wrap">
+      <span class="logo-name">Arctic</span>
+      <span class="logo-tagline">Construction</span>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#hero-section">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero-section">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-overlay"></div>
+
+  <div class="badge-3d">
+    <div class="badge-ring">
+      <div class="badge-inner">
+        <span>Est.</span>
+        <strong>2014</strong>
+        <span>Yukon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow" id="heroEyebrow">Whitehorse, Yukon Territory</p>
+
+    <div class="hero-logo" id="heroLogo">
+      <svg width="72" height="80" viewBox="0 0 48 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="44" width="40" height="3" rx="1.5" fill="#C89B3C"/>
+        <rect x="6" y="30" width="10" height="14" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.5"/>
+        <line x1="11" y1="30" x2="11" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+        <rect x="7.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="11.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="7.5" y="38" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="11.5" y="38" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="19" y="6" width="10" height="38" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.8"/>
+        <line x1="24" y1="6" x2="24" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+        <line x1="19" y1="20" x2="29" y2="20" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+        <line x1="19" y1="30" x2="29" y2="30" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+        <rect x="20.5" y="10" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="24.5" y="10" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="20.5" y="15" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="24.5" y="15" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="20.5" y="23" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="24.5" y="23" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="20.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <rect x="24.5" y="33" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.6"/>
+        <line x1="24" y1="6" x2="24" y2="1" stroke="#C89B3C" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="24" cy="1" r="1.2" fill="#C89B3C"/>
+        <rect x="32" y="18" width="10" height="26" rx="1" fill="none" stroke="#C89B3C" stroke-width="1.5"/>
+        <line x1="37" y1="18" x2="37" y2="44" stroke="rgba(200,155,60,0.3)" stroke-width="0.8"/>
+        <rect x="33.5" y="22" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="37.5" y="22" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="33.5" y="28" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="37.5" y="28" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.2)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="33.5" y="35" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.25)" stroke="#C89B3C" stroke-width="0.8"/>
+        <rect x="37.5" y="35" width="3" height="3" rx="0.5" fill="rgba(200,155,60,0.4)" stroke="#C89B3C" stroke-width="0.8"/>
+      </svg>
+    </div>
+    <h1 id="heroH1">Luxury Renovations.<br><span>Exceptional Craftsmanship.</span></h1>
+    <p id="heroP">Arctic Construction delivers premium renovation, roofing, flooring, kitchen remodeling and custom construction services across Yukon.</p>
+    <div class="hero-btns" id="heroBtns">
+      <a href="https://mail.google.com/mail/?view=cm&to=info@arcticmass.ca&su=Free Estimate Request&body=Hi Arctic Construction, I would like to request a free estimate for my project." target="_blank" class="btn btn-primary">Get Free Estimate</a>
+      <a href="#projects" class="btn btn-secondary">View Projects</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- STATS -->
+<section id="stats-section">
+  <div class="section-title reveal">
+    <h2>Our Impact</h2>
+    <p>Trusted by homeowners across Yukon for over a decade.</p>
+  </div>
+  <div class="stats">
+    <div class="stat-card tilt-card reveal"><h3><span class="counter" data-target="100">0</span>+</h3><p>Projects Completed</p></div>
+    <div class="stat-card tilt-card reveal"><h3><span class="counter" data-target="10">0</span>+</h3><p>Years Experience</p></div>
+    <div class="stat-card tilt-card reveal"><h3><span class="counter" data-target="98">0</span>%</h3><p>Client Satisfaction</p></div>
+    <div class="stat-card tilt-card reveal"><h3>24/7</h3><p>Customer Support</p></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-title reveal">
+    <h2>Our Services</h2>
+    <p>Complete residential renovation and construction solutions.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card tilt-card reveal"><div class="service-icon">🏠</div><h3>Home Renovation</h3><p>Complete interior and exterior transformations tailored to your vision.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🍳</div><h3>Kitchen Remodeling</h3><p>Modern luxury kitchen upgrades and full redesign services.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🛁</div><h3>Bathroom Renovation</h3><p>Elegant and functional bathroom renovations with premium finishes.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🏗️</div><h3>Roofing Services</h3><p>Reliable roofing installations and repairs built for Yukon winters.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🪵</div><h3>Flooring Installation</h3><p>Hardwood, vinyl, laminate and tile flooring installations.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🎨</div><h3>Painting Services</h3><p>Premium interior and exterior painting with lasting results.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🏠</div><h3>Basement Finishing</h3><p>Turn unused space into beautiful living and entertainment areas.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🌲</div><h3>Deck & Outdoor Living</h3><p>Stunning outdoor entertainment and living spaces built to last.</p></div>
+    <div class="service-card tilt-card reveal"><div class="service-icon">🔨</div><h3>Custom Construction</h3><p>Tailored construction projects built to perfection from ground up.</p></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-title reveal">
+    <h2>Featured Projects</h2>
+    <p>Recent renovation transformations across Yukon.</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project tilt-card reveal">
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200" alt="Kitchen Renovation">
+      <div class="project-label">Kitchen Remodel →</div>
+    </div>
+    <div class="project tilt-card reveal">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200" alt="Bedroom Renovation">
+      <div class="project-label">Bedroom Renovation →</div>
+    </div>
+    <div class="project tilt-card reveal">
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1200" alt="Living Room">
+      <div class="project-label">Living Room Upgrade →</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="section-title reveal">
+    <h2>Our Process</h2>
+    <p>A transparent, four-step journey from vision to completion.</p>
+  </div>
+  <div class="process-grid">
+    <div class="process-card tilt-card reveal"><div class="process-num">01</div><p>Consultation & Planning</p></div>
+    <div class="process-card tilt-card reveal"><div class="process-num">02</div><p>Design & Approval</p></div>
+    <div class="process-card tilt-card reveal"><div class="process-num">03</div><p>Construction & Renovation</p></div>
+    <div class="process-card tilt-card reveal"><div class="process-num">04</div><p>Final Walkthrough</p></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WHY CHOOSE US -->
+<section>
+  <div class="section-title reveal">
+    <h2>Why Choose Us</h2>
+    <p>The Arctic difference — quality you can see, service you can trust.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Experienced Construction Team</span></div>
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Premium Quality Materials</span></div>
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Transparent Pricing</span></div>
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Timely Project Completion</span></div>
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Customized Solutions</span></div>
+    <div class="why-item reveal"><span class="why-check">✦</span><span>Customer Satisfaction Guaranteed</span></div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-title reveal">
+    <h2>Client Testimonials</h2>
+    <p>What our Yukon clients say about working with us.</p>
+  </div>
+  <div class="testimonial-grid">
+    <div class="testimonial reveal">
+      <p>Outstanding workmanship and attention to detail. The team transformed our kitchen beyond what we imagined possible.</p>
+      <h4>— Residential Client, Whitehorse</h4>
+    </div>
+    <div class="testimonial reveal">
+      <p>Professional team, transparent communication, and delivered exactly on time. Couldn't ask for more from a contractor.</p>
+      <h4>— Homeowner, Yukon</h4>
+    </div>
+    <div class="testimonial reveal">
+      <p>Our home renovation exceeded every expectation. Arctic Construction truly delivers on their promise of luxury craftsmanship.</p>
+      <h4>— Yukon Family</h4>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-title reveal">
+    <h2>Frequently Asked Questions</h2>
+    <p>Everything you need to know before your project begins.</p>
+  </div>
+  <div class="faq-container">
+    <div class="faq-item reveal">
+      <div class="faq-q">Do you provide free estimates? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><p>Yes. We offer complimentary consultations and detailed project estimates at no cost to you.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">How long does a renovation take? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><p>Timeline depends on project scope and complexity. We provide a detailed schedule during the planning phase and stick to it.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">Do you handle custom projects? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><p>Absolutely. We specialize in fully tailored renovation solutions designed around your specific vision and needs.</p></div>
+    </div>
+    <div class="faq-item reveal">
+      <div class="faq-q">Do you work in extreme Yukon weather? <span class="faq-icon">+</span></div>
+      <div class="faq-a"><p>Yes. Our team is experienced with northern construction requirements and works year-round with materials suited for Yukon conditions.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-glow"></div>
+  <div class="contact-card reveal">
+    <h2>Contact Arctic Construction</h2>
+    <p>📧 <a href="https://mail.google.com/mail/?view=cm&to=info@arcticmass.ca&su=Free Estimate Request&body=Hi Arctic Construction, I would like to request a free estimate for my project." target="_blank" style="color:var(--primary);text-decoration:none;">info@arcticmass.ca</a></p>
+    <p>📞 +1 905-807-3891</p>
+    <p>📍 Whitehorse, Yukon Territory</p>
+    <br>
+    <a href="https://mail.google.com/mail/?view=cm&to=info@arcticmass.ca&su=Free Estimate Request&body=Hi Arctic Construction, I would like to request a free estimate for my project." target="_blank" class="btn btn-primary">Request Free Estimate</a>
+  </div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<a href="https://mail.google.com/mail/?view=cm&to=info@arcticmass.ca&su=Free Estimate Request&body=Hi Arctic Construction, I would like to request a free estimate for my project." target="_blank" class="floating-btn">Get Quote</a>
+
+<!-- FOOTER -->
+<footer>© 2026 Arctic Construction. All Rights Reserved. | Whitehorse, Yukon</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
